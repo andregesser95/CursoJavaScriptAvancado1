@@ -27,6 +27,14 @@ class NegociacaoController {
         this._limpaFormaulario();
     }
 
+    apaga() {
+        this._listaNegociacoes.esvazia();
+        this._negociacoesView.update(this._listaNegociacoes);
+
+        this._mensagem.texto = 'Negociações apagadas com sucesso';
+        history._mensagemView.update(this._mensagem);
+    }
+
     _criaNegociacao() {
         return new Negociacao(
             DateHelper.textoParaData(this._inputData.value),
@@ -41,5 +49,7 @@ class NegociacaoController {
         this._inputValor.value = 0.0;
         this._inputData.focus();
     }
+
+
 
 }
