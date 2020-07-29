@@ -80,7 +80,7 @@
                     let dados = atual.value;
 
                     negociacoes.push(new Negociacao(dados._data, dados._quantidade, dados._valor));
-                    
+
                     atual.continue();
                 } else {
                     console.log(negociacoes);
@@ -92,6 +92,18 @@
                 console.log(e.targe.error.name);
             }
         }
+
+        ConnectionFactory
+            .getConnection()
+            .then(connection => {
+                //usa a conexão
+            });
+
+        ConnectionFactory
+            .getConnection()
+            .then(connection => {
+                //usa a conexão tem que ser a mesma utilizada anteriormente
+            });
 
     </script>
 </body>
